@@ -5,7 +5,6 @@ import tomllib
 import boto3
 
 db_config = tomllib.loads(Path("~/db.toml").expanduser().read_text())
-SECRETS = json.loads(Path("~/.secrets.json").expanduser().read_text())
 
 
 def connect(environment: str):
