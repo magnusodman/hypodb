@@ -16,7 +16,7 @@ def get_config(environment: str):
     return db_config[environment]
 
 
-def connect(environment: str):
+def connect(environment: str, reconnect: bool = False):
     secret_name = db_config[environment].get(
         "secretName", None
     )  # Support AWS Secrets Manager
@@ -33,6 +33,7 @@ def connect(environment: str):
         password=password,
         db=db_config[environment]["database"],
         cursorclass=pymysql.cursors.DictCursor,
+        reconnect=reconnect,
     )
 
 
