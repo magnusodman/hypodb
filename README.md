@@ -13,3 +13,17 @@ database = <database name>
 password = <password>
 secretName=<secretsmanager secret name> # optional for using AWS Secrets Manager
 ```
+
+## Usage
+
+The `connect` function allows you to connect to the Hypo DB. It takes the following parameters:
+
+- `environment` (str): The environment configuration to use.
+- `reconnect` (bool): Whether to enable auto-reconnect. Default is True.
+
+Example:
+```python
+from hypodb import connect
+
+connection = connect("production", reconnect=True)
+```
