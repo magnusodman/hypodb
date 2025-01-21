@@ -10,5 +10,6 @@ host = <host>
 port = <port>
 user = <username>
 database = <database name>
-secretName=<secretsmanager secret name>
+password = <password>
+secretName=<secretsmanager secret name> # optional for using AWS Secrets Manager
 ```
